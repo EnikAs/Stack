@@ -4,23 +4,31 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 <body>
 <tt>
-Build started on: <u>27-09-2021 at 21:37.03</u><br />
-Build ended on: <u>27-09-2021 at 21:37.04</u><p />
+Build started on: <u>27-09-2021 at 22:17.21</u><br />
+Build ended on: <u>27-09-2021 at 22:17.22</u><p />
 <b>-------------- Build: Release in Stack (compiler: Use it for projects       = MinGW GCC + Strict)---------------</b><br />
+g++.exe  -c C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp -o obj\Release\functions.o -Wall -fexceptions  -O2  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC<br />
 g++.exe  -c C:\Users\Аскар\Desktop\Проги\Stack\main.cpp -o obj\Release\main.o -Wall -fexceptions  -O2  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC<br />
+C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp: In function 'int StackReCtor(Stack*)':<br />
+<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp:15:5: warning: no previous declaration for 'int StackReCtor(Stack*)' [-Wmissing-declarations]</font><br />
+ int StackReCtor (Stack* stk)//resize сделать статической<br />
+     ^<br />
 C:\Users\Аскар\Desktop\Проги\Stack\main.cpp: In function 'int main()':<br />
 <font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\main.cpp:8:18: warning: missing initializer for member 'Stack::data' [-Wmissing-field-initializers]</font><br />
      Stack stk = {};<br />
                   ^<br />
 <font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\main.cpp:8:18: warning: missing initializer for member 'Stack::size_of_stack' [-Wmissing-field-initializers]</font><br />
-<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\main.cpp:8:18: warning: missing initializer for member 'Stack::capasity' [-Wmissing-field-initializers]</font><br />
-<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\main.cpp:15:14: warning: unused variable 'tmp' [-Wunused-variable]</font><br />
-         char tmp[10000] = "a";<br />
-              ^<br />
+<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\main.cpp:8:18: warning: missing initializer for member 'Stack::capacity' [-Wmissing-field-initializers]</font><br />
+C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp: In function 'void StackDump(const Stack*)':<br />
+<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp:72:48: warning: format '%p' expects argument of type 'void*', but argument 2 has type 'elem {aka int}' [-Wformat=]</font><br />
+             printf (" ptr = %p\n", stk-&gt;data[i]);<br />
+                                                ^<br />
 g++.exe  -o bin\Release\Stack.exe obj\Release\functions.o obj\Release\main.o   -s<br />
-Output size is 739,00 KB<br />
-<font color="#0000ff">Process terminated with status 0 (0 minutes, 1 seconds)</font><br />
-<font color="#0000ff">0 errors, 4 warnings (0 minutes, 1 seconds)</font><br />
+obj\Release\functions.o: In function `Z9StackPushP5Stacki':<br />
+<font color="#ff0000">C:/Users/Аскар/Desktop/Проги/Stack/functions.cpp:33: undefined reference to `StackReCtor(Stack*, int)'</font><br />
+collect2.exe: error: ld returned 1 exit status<br />
+<font color="#a00000">Process terminated with status 1 (0 minutes, 0 seconds)</font><br />
+<font color="#a00000">1 errors, 5 warnings (0 minutes, 0 seconds)</font><br />
 </tt>
 </body>
 </html>

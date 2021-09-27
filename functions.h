@@ -8,7 +8,9 @@
 #include <string.h>
 #include <stdlib.h>
 
-typedef int tmpn;
+typedef int elem;
+
+const int CONST_FOR_MR_DANIIL = 2;
 
 enum for_memory_allocation_check
 {
@@ -19,18 +21,21 @@ enum for_memory_allocation_check
 
 struct Stack
 {
-    tmpn* data;
+    elem* data;
+
     int size_of_stack;
-    int capasity;
+    int capacity;
 
 };
 
-int StackCtor(Stack* stk, int capasity);
+int StackCtor(Stack* stk, int capacity);
 
-int StackReCtor (Stack* stk, int capasity);
+void StackDump (const Stack* stk);
 
-int StackPush (Stack* stk, tmpn value);
+int StackReCtor (Stack* stk);
 
-tmpn StackPop (Stack* stk);
+int StackPush (Stack* stk, elem value);
+
+elem StackPop (Stack* stk);
 
 #endif // FUNCTIONS_H_INCLUDED
