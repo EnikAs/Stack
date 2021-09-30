@@ -4,31 +4,33 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 <body>
 <tt>
-Build started on: <u>27-09-2021 at 22:17.21</u><br />
-Build ended on: <u>27-09-2021 at 22:17.22</u><p />
-<b>-------------- Build: Release in Stack (compiler: Use it for projects       = MinGW GCC + Strict)---------------</b><br />
-g++.exe  -c C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp -o obj\Release\functions.o -Wall -fexceptions  -O2  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC<br />
-g++.exe  -c C:\Users\Аскар\Desktop\Проги\Stack\main.cpp -o obj\Release\main.o -Wall -fexceptions  -O2  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC<br />
-C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp: In function 'int StackReCtor(Stack*)':<br />
-<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp:15:5: warning: no previous declaration for 'int StackReCtor(Stack*)' [-Wmissing-declarations]</font><br />
- int StackReCtor (Stack* stk)//resize сделать статической<br />
+Build started on: <u>01-10-2021 at 02:11.18</u><br />
+Build ended on: <u>01-10-2021 at 02:11.19</u><p />
+<b>-------------- Build: Debug in Stack (compiler: Use it for projects       = MinGW GCC + Strict)---------------</b><br />
+g++.exe  -c C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp -o obj\Debug\functions.o -Wall -fexceptions  -g  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC<br />
+C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp: In function 'void StackDump(int, const Stack*, int, const char*, const char*)':<br />
+<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp:71:6: warning: no previous declaration for 'void StackDump(int, const Stack*, int, const char*, const char*)' [-Wmissing-declarations]</font><br />
+ void StackDump (int stk_correct_check, const Stack* stk, const int str_num, const char* func_name, const char* file_name )<br />
+      ^<br />
+C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp: At global scope:<br />
+<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp:71:6: warning: unused parameter 'stk_correct_check' [-Wunused-parameter]</font><br />
+C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp: In function 'int StackOKCheck(const Stack*)':<br />
+<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp:96:5: warning: no previous declaration for 'int StackOKCheck(const Stack*)' [-Wmissing-declarations]</font><br />
+ int StackOKCheck (const Stack* stk)<br />
      ^<br />
-C:\Users\Аскар\Desktop\Проги\Stack\main.cpp: In function 'int main()':<br />
-<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\main.cpp:8:18: warning: missing initializer for member 'Stack::data' [-Wmissing-field-initializers]</font><br />
-     Stack stk = {};<br />
-                  ^<br />
-<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\main.cpp:8:18: warning: missing initializer for member 'Stack::size_of_stack' [-Wmissing-field-initializers]</font><br />
-<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\main.cpp:8:18: warning: missing initializer for member 'Stack::capacity' [-Wmissing-field-initializers]</font><br />
-C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp: In function 'void StackDump(const Stack*)':<br />
-<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp:72:48: warning: format '%p' expects argument of type 'void*', but argument 2 has type 'elem {aka int}' [-Wformat=]</font><br />
-             printf (" ptr = %p\n", stk-&gt;data[i]);<br />
-                                                ^<br />
-g++.exe  -o bin\Release\Stack.exe obj\Release\functions.o obj\Release\main.o   -s<br />
-obj\Release\functions.o: In function `Z9StackPushP5Stacki':<br />
-<font color="#ff0000">C:/Users/Аскар/Desktop/Проги/Stack/functions.cpp:33: undefined reference to `StackReCtor(Stack*, int)'</font><br />
+<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp:107:27: warning: suggest braces around empty body in an 'if' statement [-Wempty-body]</font><br />
+     if (stk-&gt;data == NULL);<br />
+                           ^<br />
+g++.exe  -o bin\Debug\Stack.exe obj\Debug\functions.o obj\Debug\main.o<br />
+obj\Debug\functions.o: In function `Z12StackOKCheckPK5Stack':<br />
+<font color="#ff0000">C:/Users/Аскар/Desktop/Проги/Stack/functions.cpp:102: undefined reference to `StackDump(Stack const*, int, char const*, char const*)'</font><br />
+<font color="#ff0000">C:/Users/Аскар/Desktop/Проги/Stack/functions.cpp:105: undefined reference to `StackDump(Stack const*, int, char const*, char const*)'</font><br />
+<font color="#ff0000">C:/Users/Аскар/Desktop/Проги/Stack/functions.cpp:108: undefined reference to `StackDump(Stack const*, int, char const*, char const*)'</font><br />
+obj\Debug\main.o: In function `main':<br />
+<font color="#ff0000">C:/Users/Аскар/Desktop/Проги/Stack/main.cpp:27: undefined reference to `StackDump(Stack const*, int, char const*, char const*)'</font><br />
 collect2.exe: error: ld returned 1 exit status<br />
-<font color="#a00000">Process terminated with status 1 (0 minutes, 0 seconds)</font><br />
-<font color="#a00000">1 errors, 5 warnings (0 minutes, 0 seconds)</font><br />
+<font color="#a00000">Process terminated with status 1 (0 minutes, 1 seconds)</font><br />
+<font color="#a00000">4 errors, 4 warnings (0 minutes, 1 seconds)</font><br />
 </tt>
 </body>
 </html>

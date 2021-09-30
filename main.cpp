@@ -16,23 +16,22 @@ int main()
 
     for (int i = 500 ; i > 0 ; i--)
     {
-
-    printf (" cap = %d \n", stk.capacity);
         StackPush(&stk, i);
     }
-    StackDump (&stk);
-    double a = -0;
-    double b = 0;
-    if (b > a)
-        printf ("GOVNOGOVNOGOVNOGOVOGOnsidjf");
 
+    for (int i = 250 ; i > 0 ; i--)
+    {
+        StackPop(&stk);
+    }
 
+    StackDump(&stk);
      /*while (stk.size_of_stack)
         {
         printf ("\n|| cap = %d ||", stk.capacity);
         printf ("%lg ", StackPop(&stk));
         }*/
-
+    //StackDtor (&stk);
+    printf ("\n%s\n", __func__);
     return 0;
 }
 

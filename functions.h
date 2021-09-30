@@ -7,8 +7,14 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <cassert>
+
+#define $StackDump(stk) StackDump(stk, __LINE__, __func__, __FILE__)
+
 
 typedef int elem;
+
+const int POISON666 = 0xDEADBEEF;
 
 const int CONST_FOR_MR_DANIIL = 2;
 
@@ -30,9 +36,13 @@ struct Stack
 
 int StackCtor(Stack* stk, int capacity);
 
-void StackDump (const Stack* stk);
+int StackOkCheck (const Stack* stk);
 
-int StackReCtor (Stack* stk);
+void StackDump (const Stack* stk, const int str_num = 0, const char* func_name = NULL, const char* file_name = NULL );
+
+void StackDtor (Stack* stk);
+
+int StackReSize (Stack* stk);
 
 int StackPush (Stack* stk, elem value);
 
