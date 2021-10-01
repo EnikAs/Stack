@@ -10,9 +10,14 @@
 #include <cassert>
 
 #define $StackDump(stk) StackDump(stk, __LINE__, __func__, __FILE__)
+#define $printf(...) fprintf(log_file, ##__VA_ARGS__)
 
 
 typedef int elem;
+
+extern FILE* log_file;  //Да, глобальная переменная, но без нее код ужасно некрасивый))))
+
+const int ERROR = 0;
 
 const int POISON666 = 0xDEADBEEF;
 
@@ -31,14 +36,15 @@ struct Stack
 
     int size_of_stack;
     int capacity;
+    bool if_destructed = false;
 
 };
 
 int StackCtor(Stack* stk, int capacity);
 
-int StackOkCheck (const Stack* stk);
+int StackOKCheck (const Stack* stk);
 
-void StackDump (const Stack* stk, const int str_num = 0, const char* func_name = NULL, const char* file_name = NULL );
+void StackDump (const Stack* stk, const int str_num, const char* func_name, const char* file_name );
 
 void StackDtor (Stack* stk);
 

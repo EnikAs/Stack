@@ -4,33 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 <body>
 <tt>
-Build started on: <u>01-10-2021 at 02:11.18</u><br />
-Build ended on: <u>01-10-2021 at 02:11.19</u><p />
-<b>-------------- Build: Debug in Stack (compiler: Use it for projects       = MinGW GCC + Strict)---------------</b><br />
-g++.exe  -c C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp -o obj\Debug\functions.o -Wall -fexceptions  -g  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC<br />
-C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp: In function 'void StackDump(int, const Stack*, int, const char*, const char*)':<br />
-<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp:71:6: warning: no previous declaration for 'void StackDump(int, const Stack*, int, const char*, const char*)' [-Wmissing-declarations]</font><br />
- void StackDump (int stk_correct_check, const Stack* stk, const int str_num, const char* func_name, const char* file_name )<br />
-      ^<br />
-C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp: At global scope:<br />
-<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp:71:6: warning: unused parameter 'stk_correct_check' [-Wunused-parameter]</font><br />
+Build started on: <u>01-10-2021 at 03:42.40</u><br />
+Build ended on: <u>01-10-2021 at 03:42.41</u><p />
+<b>-------------- Build: Release in Stack (compiler: Use it for projects       = MinGW GCC + Strict)---------------</b><br />
+g++.exe  -c C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp -o obj\Release\functions.o -Wall -fexceptions  -O2  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC<br />
 C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp: In function 'int StackOKCheck(const Stack*)':<br />
-<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp:96:5: warning: no previous declaration for 'int StackOKCheck(const Stack*)' [-Wmissing-declarations]</font><br />
- int StackOKCheck (const Stack* stk)<br />
-     ^<br />
-<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp:107:27: warning: suggest braces around empty body in an 'if' statement [-Wempty-body]</font><br />
-     if (stk-&gt;data == NULL);<br />
-                           ^<br />
-g++.exe  -o bin\Debug\Stack.exe obj\Debug\functions.o obj\Debug\main.o<br />
-obj\Debug\functions.o: In function `Z12StackOKCheckPK5Stack':<br />
-<font color="#ff0000">C:/Users/Аскар/Desktop/Проги/Stack/functions.cpp:102: undefined reference to `StackDump(Stack const*, int, char const*, char const*)'</font><br />
-<font color="#ff0000">C:/Users/Аскар/Desktop/Проги/Stack/functions.cpp:105: undefined reference to `StackDump(Stack const*, int, char const*, char const*)'</font><br />
-<font color="#ff0000">C:/Users/Аскар/Desktop/Проги/Stack/functions.cpp:108: undefined reference to `StackDump(Stack const*, int, char const*, char const*)'</font><br />
-obj\Debug\main.o: In function `main':<br />
-<font color="#ff0000">C:/Users/Аскар/Desktop/Проги/Stack/main.cpp:27: undefined reference to `StackDump(Stack const*, int, char const*, char const*)'</font><br />
-collect2.exe: error: ld returned 1 exit status<br />
-<font color="#a00000">Process terminated with status 1 (0 minutes, 1 seconds)</font><br />
-<font color="#a00000">4 errors, 4 warnings (0 minutes, 1 seconds)</font><br />
+<font color="#0000ff">C:\Users\Аскар\Desktop\Проги\Stack\functions.cpp:118:1: warning: control reaches end of non-void function [-Wreturn-type]</font><br />
+ }<br />
+ ^<br />
+g++.exe  -o bin\Release\Stack.exe obj\Release\functions.o obj\Release\main.o   -s<br />
+Output size is 740,50 KB<br />
+<font color="#0000ff">Process terminated with status 0 (0 minutes, 1 seconds)</font><br />
+<font color="#0000ff">0 errors, 1 warnings (0 minutes, 1 seconds)</font><br />
 </tt>
 </body>
 </html>

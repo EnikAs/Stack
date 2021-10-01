@@ -1,6 +1,6 @@
 #include "functions.h"
 
-using namespace std;
+//using namespace std;
 
 int main()
 {
@@ -24,13 +24,10 @@ int main()
         StackPop(&stk);
     }
 
-    StackDump(&stk);
-     /*while (stk.size_of_stack)
-        {
-        printf ("\n|| cap = %d ||", stk.capacity);
-        printf ("%lg ", StackPop(&stk));
-        }*/
-    //StackDtor (&stk);
+    $StackDump(&stk);
+
+    StackDtor (&stk);
+
     printf ("\n%s\n", __func__);
     return 0;
 }
