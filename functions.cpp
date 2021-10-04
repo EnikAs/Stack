@@ -2,6 +2,13 @@
 
 FILE* log_file = fopen("log.txt", "w");
 
+void* my_recalloc(void* stk, size_t sz) // sz - размер в байтах
+{
+    stk = (void*) realloc(stk, sz);
+    memset (stk, 0, sz);
+    return stk;
+}
+
 int StackCtor (Stack* stk, int capacity)
 {
     stk->data = (elem*) calloc(capacity, sizeof(elem));
@@ -9,12 +16,24 @@ int StackCtor (Stack* stk, int capacity)
     StackOKCheck(stk);
 
     stk->capacity = capacity;
+
+    return CORRECT;
+}
+
+int StackCtor (Stack* stk, int capacity)
+{
+    stk->data = (elem*) calloc(capacity, sizeof(elem));
+
+    StackOKCheck(stk);
+
+    stk->capacity = capacity;
+
     return CORRECT;
 }
 
 int StackReSize (Stack* stk)//resize сделать статической
 {
-    stk->capacity *= CONST_FOR_MR_DANIIL;
+    stk->capacity *= CONST_FOR_MR_DANIIL; // CONST_FOR_MR_DANIIL = 2
     stk->data = (elem*) realloc(stk->data, sizeof(elem) * stk->capacity);
 
     StackOKCheck(stk);
@@ -30,7 +49,9 @@ int StackPush (Stack* stk, elem value)
         StackOKCheck(stk);
     }
 
-    stk->data[stk->size_of_stack++] = value;
+    //stk->data[stk->size_of_stack++] = value;
+
+    *((elem*)( (char*)(stk->data) + sizeof(elem) * (stk->size_of_stack ++) )) = value;
 
     return 0;
 }
@@ -44,7 +65,7 @@ elem StackPop (Stack* stk)
 
         StackOKCheck(stk);
 
-        stk->capacity = stk->capacity /3 * 2;// переполнение god bless MR.DANIIL - можно этим ломать
+        stk->capacity = stk->capacity /3 * 2;// переполнение god bless MR.DANIIL
 
         StackOKCheck(stk);
     }
@@ -53,8 +74,8 @@ elem StackPop (Stack* stk)
     if (tmp == POISON666)
         $StackDump(stk);
 
-    (stk->data[--stk->size_of_stack]) = POISON666;
-    return tmp;// если сайз unsigned, то -- все свалит в пизду !!!
+    stk->data[--stk->size_of_stack] = POISON666;
+    return tmp;// если сайз unsigned, то -- все очень сильно испортит))!!!
 
 }
 
@@ -62,7 +83,7 @@ void StackDtor (Stack* stk)
 {
     stk->size_of_stack = 0;
     stk->capacity = 0;
-    (stk->data) = (elem*)POISON666;
+    //&(stk->data) = POISON666;
     stk->if_destructed = true;
     free(stk->data);
     free(stk);
@@ -71,7 +92,7 @@ void StackDtor (Stack* stk)
 void StackDump (const Stack* stk, const int str_num, const char* func_name, const char* file_name)
 {
 
-    $printf ("\nIn file %s, in function %s on line %d\n", file_name, func_name, str_num);
+    $printf ("\nIn file %s, in function |%s| on line %d\n", file_name, func_name, str_num);
     if (stk)
     {
         $printf("-------------------------------------\n");
@@ -82,8 +103,8 @@ void StackDump (const Stack* stk, const int str_num, const char* func_name, cons
         $printf("capacity = %d\n", stk->capacity);
         for (int i = 0 ; i < stk->capacity ; i++)
         {
-            $printf("data[%d] = %d", i, stk->data[i]);
-            $printf(" ptr = %p\n", &stk->data[i]);
+            $printf("data[%d] = %d ", i, stk->data[i]);
+            $printf("|| ptr = %p\n", &stk->data[i]);
         }
     }
     else
@@ -110,15 +131,10 @@ int StackOKCheck (const Stack* stk)
 
     if (stk->data == NULL)
         $StackDump(stk);
-    if (stk->if_destructed == true)
 
+    if (stk->if_destructed == true)
+        $StackDump(stk);
 
 
     return CORRECT;
 }
-
-
-
-
-
-

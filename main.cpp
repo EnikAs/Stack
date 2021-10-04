@@ -6,7 +6,7 @@ int main()
 {
     int correct_check = 0;
     Stack stk = {};
-    correct_check = StackCtor(&stk, 1);
+    correct_check = StackCtor(&stk, 3);
 
     if (correct_check == MEMORY_LEAK)
     {
@@ -28,7 +28,6 @@ int main()
 
     StackDtor (&stk);
 
-    printf ("\n%s\n", __func__);
     return 0;
 }
 

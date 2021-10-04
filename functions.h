@@ -9,9 +9,20 @@
 #include <stdlib.h>
 #include <cassert>
 
-#define $StackDump(stk) StackDump(stk, __LINE__, __func__, __FILE__)
-#define $printf(...) fprintf(log_file, ##__VA_ARGS__)
+#define DEBUG
 
+#ifdef DEBUG
+
+#define $StackDump(stk) StackDump(stk, __LINE__, __func__, __FILE__)
+
+#else
+
+#define $StackDump(stk)
+
+#endif
+
+#define $printf(...) fprintf(log_file, ##__VA_ARGS__)
+//#define $printf(...) printf( ##__VA_ARGS__)
 
 typedef int elem;
 
@@ -19,7 +30,7 @@ extern FILE* log_file;  //Да, глобальная переменная, но без нее код ужасно некра
 
 const int ERROR = 0;
 
-const int POISON666 = 0xDEADBEEF;
+const double POISON666 = 1000-7;//0xDED32DED;
 
 const int CONST_FOR_MR_DANIIL = 2;
 
@@ -32,26 +43,29 @@ enum for_memory_allocation_check
 
 struct Stack
 {
-    elem* data;
 
+    long long canary1 = POISON666;
+    elem* data;
     int size_of_stack;
     int capacity;
     bool if_destructed = false;
-
+    long long canary2 = POISON666;
 };
 
-int StackCtor(Stack* stk, int capacity);
+int        StackCtor           (Stack* stk, int capacity);
 
-int StackOKCheck (const Stack* stk);
+void*      my_recalloc         (void* stk, size_t sz); // sz - размер в байтах
 
-void StackDump (const Stack* stk, const int str_num, const char* func_name, const char* file_name );
+int        StackOKCheck        (const Stack* stk);
 
-void StackDtor (Stack* stk);
+void       StackDump           (const Stack* stk, const int str_num, const char* func_name, const char* file_name );
 
-int StackReSize (Stack* stk);
+void       StackDtor           (Stack* stk);
 
-int StackPush (Stack* stk, elem value);
+int        StackReSize         (Stack* stk);
 
-elem StackPop (Stack* stk);
+int        StackPush           (Stack* stk, elem value);
+
+elem       StackPop            (Stack* stk);
 
 #endif // FUNCTIONS_H_INCLUDED
